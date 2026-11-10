@@ -20,15 +20,34 @@
   </div>
 </div>
 
+
+<div class="card" id="mcard">
+  <div><b>จับคู่ชื่อสมาชิกที่โหวตจาก Google Sheets</b></div>
+  <p class="msg">ในชีตให้ไปที่ ไฟล์ &gt; ดาวน์โหลด &gt; Microsoft Excel (.xlsx) หรือ CSV แล้วเลือกไฟล์ด้านล่าง หรือวางลิงก์ชีต (ต้องตั้งให้ใครมีลิงก์ก็ดูได้) ไฟล์ "รวมกระเป๋า GE6" จะถูกอ่านอัตโนมัติ ไม่ต้องเลือกคอลัมน์</p>
+  <div class="row">
+    <input type="file" id="sfile" accept=".xlsx,.xls,.csv">
+    <input type="text" id="surl" placeholder="หรือวางลิงก์ Google Sheets" style="flex:1;min-width:220px">
+    <button id="sget" class="ghost">ดึงจากลิงก์</button>
+  </div>
+  <div class="row" id="smap" style="margin-top:10px" hidden>
+    <label class="msg">แท็บ <select id="stab"></select></label>
+    <label class="msg">คอลัมน์ Address <select id="scaddr"></select></label>
+    <label class="msg">คอลัมน์ชื่อ <select id="scname"></select></label>
+    <button id="smatch">จับคู่</button>
+  </div>
+  <div class="msg" id="smsg" style="margin-top:8px"></div>
+</div>
+
 <div class="card" id="out" hidden>
   <div class="stats" id="stats"></div>
   <div class="row" style="margin:14px 0 10px">
     <input type="text" id="q" placeholder="ค้นหา address..." style="flex:1;min-width:200px">
     <button id="xl">ดาวน์โหลด Excel</button>
+    <select id="flt"><option value="all">ทั้งหมด</option><option value="yes">เฉพาะที่ตรงกับชีต</option><option value="no">เฉพาะที่ไม่ตรง</option></select>
     <button id="csv" class="ghost">ดาวน์โหลด CSV</button>
   </div>
   <div class="wrap"><table><thead><tr>
-    <th data-k="rank" class="n">#</th><th data-k="address">Address</th><th data-k="type">ชนิด</th><th data-k="balance" class="n">Balance</th><th data-k="pct" class="n">% ของ Supply</th>
+    <th data-k="rank" class="n">#</th><th data-k="address">Address</th><th data-k="type">ชนิด</th><th data-k="voter">ชื่อสมาชิก (โหวต)</th><th data-k="note">Wallet Note</th><th data-k="balance" class="n">Balance</th><th data-k="pct" class="n">% ของ Supply</th>
   </tr></thead><tbody id="tb"></tbody></table></div>
   <div class="pg"><button class="ghost" id="prev">ก่อนหน้า</button><span id="pi"></span><button class="ghost" id="next">ถัดไป</button></div>
 </div>

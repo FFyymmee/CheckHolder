@@ -24,3 +24,7 @@ td.n,th.n{text-align:right}
 td.a{font-family:ui-monospace,Menlo,monospace;font-size:13px}
 .pg{display:flex;gap:8px;align-items:center;justify-content:flex-end;margin-top:10px;color:var(--mut)}
 .msg{color:var(--mut);font-size:13px}.err{color:#dc2626}
+
+select{background:var(--bg);color:var(--tx);border:1px solid var(--bd);border-radius:8px;padding:8px;font:inherit;max-width:220px}
+td.v{color:var(--ac);font-weight:600}
+[hidden]{display:none!important}
