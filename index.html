@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GE6 (TKX Chain) Holders</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<h1 id="title">Token Holders</h1>
+<p class="sub" id="sub"></p>
+
+<div class="card">
+  <div class="row">
+    <button id="go">โหลดข้อมูลทั้งหมดจาก API</button>
+    <div class="bar"><i id="pb"></i></div>
+    <span class="msg" id="msg"></span>
+  </div>
+</div>
+
+<div class="card" id="out" hidden>
+  <div class="stats" id="stats"></div>
+  <div class="row" style="margin:14px 0 10px">
+    <input type="text" id="q" placeholder="ค้นหา address..." style="flex:1;min-width:200px">
+    <button id="xl">ดาวน์โหลด Excel</button>
+    <button id="csv" class="ghost">ดาวน์โหลด CSV</button>
+  </div>
+  <div class="wrap"><table><thead><tr>
+    <th data-k="rank" class="n">#</th><th data-k="address">Address</th><th data-k="type">ชนิด</th><th data-k="balance" class="n">Balance</th><th data-k="pct" class="n">% ของ Supply</th>
+  </tr></thead><tbody id="tb"></tbody></table></div>
+  <div class="pg"><button class="ghost" id="prev">ก่อนหน้า</button><span id="pi"></span><button class="ghost" id="next">ถัดไป</button></div>
+</div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
